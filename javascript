@@ -3,6 +3,42 @@
 <head>
   <title>WEB1 - JavaScript</title>
   <meta charset="utf-8">
+  <script>
+    function nightDayHandler(self)
+    {
+      // 함수 내에서 this = 전역 객체 , 따라서 self 사용 
+      var target =  document.querySelector('body');
+      if(self.value === 'night')
+      {
+        target.style.backgroundColor = 'black';
+        target.style.color = 'white';
+        self.value = 'day' ;
+
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while(i<alist.length)
+        {
+          alist[i].style.color = 'powderblue';
+          i++;
+        }
+      
+      }
+      else
+      {
+        target.style.backgroundColor = 'white';
+        target.style.color = 'black';
+        self.value = 'night';
+
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while(i<alist.length)
+        {
+          alist[i].style.color = 'blue';
+          i++;
+        }
+      }
+    }
+  </script>
 </head>
 <body>
   <h1><a href="index.html">WEB</a></h1>
@@ -29,7 +65,8 @@
     }
       ">-->
   <input type="button" value="night" onclick="
-  var target =  document.querySelector('body');
+   nightDayHandler(this); 
+  /*var target =  document.querySelector('body');
   if(this.value === 'night')
     {
       target.style.backgroundColor = 'black';
@@ -41,8 +78,9 @@
       while(i<alist.length)
       {
         alist[i].style.color = 'powderblue';
-        i = i++;
+        i++;
       }
+     
     }
     else
     {
@@ -50,14 +88,14 @@
       target.style.color = 'black';
       this.value = 'night';
 
-      /*var alist = document.querySelectorAll('a');
+      var alist = document.querySelectorAll('a');
       var i = 0;
       while(i<alist.length)
       {
         alist[i].style.color = 'blue';
-        i = i++;
-      }*/
-    }
+        i++;
+      }
+    }*/
       ">
   <ol>
     <li><a href="1.html">HTML</a></li>
